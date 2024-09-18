@@ -65,13 +65,12 @@ apply h3
 apply h5
 have h2n:∏ c ∈ ({a^2}), f c ∣ ∏ c ∈ ({a} ∪ {2*a}), f c
 rw[Finset.prod_union]
-repeat rw[Finset.prod_singleton]
-repeat rw[f]
+repeat rw[Finset.prod_singleton,f]
 ring_nf
 apply dvd_mul_right
 simp
-rw[two_mul]
-rw[add_right_eq_self]
+rw[two_mul,add_right_eq_self]
+
 apply ne_of_gt
 apply gt_trans
 apply g1
